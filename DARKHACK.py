@@ -6,10 +6,10 @@ pass_in = raw_input("Please enter the MD5 Hash: ")
 pwfile = raw_input("Please enter the password file name: ")
 
 try:
-pwfile = open(pwfile, "r")
+  pwfile = open(pwfile,'r')
+
 except:
-print "\nFile not Found."
-quit
+  print "\nFile not Found."
 for password in pwfile:
 filemd5 = md5.new(password.strip()).hexdigest()
 print "Trying password number %d: %s " % (couter, password.strip())
